@@ -31,11 +31,7 @@ bool Account::Deposit(int amount)
 		log.push_back(Transaction(amount, "Deposit"));
 		return true;
 	}
-	else
-	{
-		return false;
-	}
-
+	return false;
 }
 bool Account::Withdraw(int amount)
 {
