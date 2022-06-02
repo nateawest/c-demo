@@ -17,20 +17,18 @@ int main()
 	{
 		cout << "Press 0 for account balance, 1 to make a deposit, 2 to make a withdraw. ";
 		cin >> userInput;
-
-		if (userInput == 0)
+		
+		switch(userInput) 
 		{
+		  case 0:
 			//Account a1;
 			for (auto s : a1.Report())
 			{
 				cout << s << '\n';
 			}
-
-		}
-
-		if (userInput == 1)
-		{
-			int amount = 0;
+		  	break;
+		  case 1:
+		   	int amount = 0;
 			cout << "How much would you like to deposit? ";
 			cin >> amount;
 
@@ -50,11 +48,8 @@ int main()
 			{
 				cout << s << '\n';
 			}
-
-		}
-
-		if (userInput == 2)
-		{
+		    	break;
+		  case 2:
 			int amount = 0;
 			int balance = a1.GetBalance();
 			cout << "How much would you like to withdraw? ";
@@ -81,6 +76,10 @@ int main()
 			{
 				cout << s << '\n';
 			}
+		  	break;
+		  default:
+		    // default block
+		    break;
 		}
 
 		cout << '\n' << "Would you like to complete another transaction? 1 for Yes, any other number to exit ";
@@ -90,6 +89,5 @@ int main()
 		{
 			action = false;
 		}
-
 	}
 }
